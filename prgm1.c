@@ -1,3 +1,17 @@
+/**The below code reads multiple entries of data, each entry containing three lines: presumably a name, 
+a status (either "In" or "Out"), and a timestamp. 
+It then processes these entries to determine the count of people "In" at a specific given time.**/
+/** the question is to accept N records of R people in an office.the input format is 
+eg: name status 25hrtimeforamt
+A IN 09:20
+B IN 09:32
+c IN 09:08
+B OUT 12:32
+
+so the program has to print the count of people inside the office under the specific time
+NOTE: the people in / on the timne 
+
+**/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -68,7 +82,7 @@ int main()
             
             if(hour < hr)
             count--;
-            else if(hour == hr && m < min)
+            else if(hour == hr && m <= min)
             count--;
             
             
