@@ -1,0 +1,52 @@
+/*Find Maximum and Minimum in an Array
+Write a program to find the largest and smallest elements in an array*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include <limits.h>  
+
+int main()
+{
+    int size;
+    scanf("%d",&size);
+    int* array;
+    array = (int*)malloc(size * sizeof(int));
+    // ptr = (int*)malloc(n * sizeof(int));
+    
+    if(array == NULL)
+    {
+        printf("MEMORY NOT ALLOCATED");
+        return 1;
+    }
+    
+    for(int value = 0;value < size;value++)
+    {
+        scanf("%d",&array[value]);
+    }
+    
+    
+    for(int value = 0;value < size;value++)
+        printf("%d ",array[value]);
+        
+    
+    
+    
+    
+    // TO FIND MAXIMUM AND MINIMUM VALUE IN  AN array
+    
+    int max = INT_MIN, min = INT_MAX;
+    
+    for(int index = 0;index < size;index++)
+    {
+        if(array[index] > max)
+        max = array[index];
+        
+        if(array[index] < min)
+        min = array[index];
+    }
+    
+    free(array);
+    printf("\nMAXIMUM VALUE = %d\nMINIMUM VALUE = %d",max,min);
+    
+}
